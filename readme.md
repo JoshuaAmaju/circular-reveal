@@ -31,4 +31,4 @@
 | `beforehide`   |             | `CustomEvent<any>` |
 | `beforereveal` |             | `CustomEvent<any>` |
 
-[demo]: (https://joshuaamaju.github.io/circular-reveal/)
+[demo](https://joshuaamaju.github.io/circular-reveal/)
