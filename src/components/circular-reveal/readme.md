@@ -7,11 +7,25 @@
 
 ## Properties
 
-| Property | Attribute | Description     | Type     | Default     |
-| -------- | --------- | --------------- | -------- | ----------- |
-| `first`  | `first`   | The first name  | `string` | `undefined` |
-| `last`   | `last`    | The last name   | `string` | `undefined` |
-| `middle` | `middle`  | The middle name | `string` | `undefined` |
+| Property       | Attribute       | Description | Type      | Default     |
+| -------------- | --------------- | ----------- | --------- | ----------- |
+| `duration`     | `duration`      |             | `number`  | `undefined` |
+| `easing`       | `easing`        |             | `string`  | `undefined` |
+| `finalHeight`  | `final-height`  |             | `number`  | `undefined` |
+| `finalWidth`   | `final-width`   |             | `number`  | `undefined` |
+| `reveal`       | `reveal`        |             | `boolean` | `false`     |
+| `target`       | `target`        |             | `string`  | `undefined` |
+| `targetBounds` | `target-bounds` |             | `string`  | `undefined` |
+
+
+## Events
+
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `afterhide`    |             | `CustomEvent<any>` |
+| `afterreveal`  |             | `CustomEvent<any>` |
+| `beforehide`   |             | `CustomEvent<any>` |
+| `beforereveal` |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------

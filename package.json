@@ -1,7 +1,7 @@
 {
   "name": "circular-reveal",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "circular reveal custom element",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -10,6 +10,8 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/circular-reveal/circular-reveal.js",
+  "repository": "https://github.com/JoshuaAmaju/circular-reveal.git",
+  "author": "Joshua Amaju <princejosh0007@gmail.com>",
   "files": [
     "dist/",
     "loader/"

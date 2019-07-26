@@ -3,14 +3,30 @@
 # Circular reveal
 
 ```
-<circular-reveal
-        target="#one"
-        reveal="false"
-        duration="0.75"
-        easing="cubic-bezier(0.68, -0.55, 0.27, 1.55)"
-      >
-        <button>content</button>
+<circular-reveal>
+  <button>content</button>
 </circular-reveal>
 ```
 
-[demo]: https://i1.wp.com/www.myhexaville.com/wp-content/uploads/2016/12/ezgif.com-crop2.gif?resize=380%2C130
+## Properties
+
+| Attribute       | Description | Type      | Default       |
+| --------------- | ----------- | --------- | ------------- |
+| `duration`      |             | `number`  | `0.25s`       |
+| `easing`        |             | `string`  | `ease-in-out` |
+| `final-height`  |             | `number`  | `undefined`   |
+| `final-width`   |             | `number`  | `undefined`   |
+| `reveal`        |             | `boolean` | `false`       |
+| `target`        |             | `string`  | `undefined`   |
+| `target-bounds` |             | `string`  | `undefined`   |
+
+## Events
+
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `afterhide`    |             | `CustomEvent<any>` |
+| `afterreveal`  |             | `CustomEvent<any>` |
+| `beforehide`   |             | `CustomEvent<any>` |
+| `beforereveal` |             | `CustomEvent<any>` |
+
+[demo](https://i1.wp.com/www.myhexaville.com/wp-content/uploads/2016/12/ezgif.com-crop2.gif?resize=380%2C130)
