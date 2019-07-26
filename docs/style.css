@@ -1,0 +1,74 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h1,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.container,
+.reveal-wrapper {
+  height: 100%;
+  position: relative;
+}
+
+.reveal_controls {
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  margin: 1em;
+  position: absolute;
+}
+
+.reveal_controls > * + * {
+  margin-left: 1em;
+}
+
+button {
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  padding: 0.7em 1.2em;
+  background: #e2e2e2cf;
+}
+
+circular-reveal {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #ccc;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+circular-reveal div {
+  padding: 2em;
+  background: #33333324;
+  background: -webkit-linear-gradient(#000, #0000);
+}
+
+circular-reveal h1 {
+  color: #fff;
+  font-size: 3em;
+}
+
+circular-reveal h3 {
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  color: rgb(218, 218, 218);
+}

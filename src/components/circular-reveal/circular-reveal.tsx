@@ -81,6 +81,8 @@ export class CircularReveal {
 
     const { top, left, radius } = this.calcRevealCenter(this.targetRect);
     this.clip({ top, left, radius: `${radius}px` });
+
+    if (this.reveal) this.show();
   }
 
   hide() {
