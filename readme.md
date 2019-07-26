@@ -29,4 +29,4 @@
 | `beforehide`   |             | `CustomEvent<any>` |
 | `beforereveal` |             | `CustomEvent<any>` |
 
-[demo](https://i1.wp.com/www.myhexaville.com/wp-content/uploads/2016/12/ezgif.com-crop2.gif?resize=380%2C130)
+![demo](https://i1.wp.com/www.myhexaville.com/wp-content/uploads/2016/12/ezgif.com-crop2.gif?resize=380%2C130)
