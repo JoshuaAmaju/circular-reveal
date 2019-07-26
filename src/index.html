@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/circular-reveal.esm.js"></script>
+    <script nomodule src="/build/circular-reveal.js"></script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+      }
+
+      .container {
+        height: 100%;
+        /* display: flex; */
+        position: relative;
+      }
+
+      button {
+        z-index: 2;
+        margin: 3em;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: blue;
+        border-radius: 7px;
+        position: relative;
+        padding: 0.7em 1.2em;
+      }
+
+      circular-reveal {
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #ccc;
+      }
+
+      circular-reveal.show {
+        visibility: visible !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="one">click me</button>
+      <button id="two">click me</button>
+      <button id="three">click me</button>
+      <circular-reveal
+        duration="0.75"
+        easing="cubic-bezier(0.68, -0.55, 0.27, 1.55)"
+        reveal="false"
+        target="#one"
+      >
+        <button>content</button>
+      </circular-reveal>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      const buttons = container.querySelectorAll("button");
+      const circularReveal = document.querySelector("circular-reveal");
+
+      buttons.forEach(button => {
+        button.onclick = () => {
+          const isRevealed = circularReveal.getAttribute("reveal");
+          const shouldReveal = isRevealed === "true" ? "false" : "true";
+          circularReveal.setAttribute("reveal", shouldReveal);
+          // circularReveal.setAttribute("target", `#${button.id}`);
+
+          const rect = button.getBoundingClientRect();
+          const bounds = `${rect.top}, ${rect.left}, ${rect.width}, ${
+            rect.height
+          }`;
+          circularReveal.setAttribute("target-bounds", bounds);
+        };
+      });
+    </script>
+  </body>
+</html>
