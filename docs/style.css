@@ -20,6 +20,7 @@ h3 {
 .container,
 .reveal-wrapper {
   height: 100%;
+  overflow: hidden;
   position: relative;
 }
 
@@ -28,7 +29,10 @@ h3 {
   bottom: 0;
   z-index: 2;
   margin: 1em;
+  display: flex;
   position: absolute;
+  align-items: center;
+  justify-content: center;
 }
 
 .reveal_controls > * + * {
@@ -41,6 +45,11 @@ button {
   border-radius: 7px;
   padding: 0.7em 1.2em;
   background: #e2e2e2cf;
+}
+
+.reverse-reveal {
+  color: #fff;
+  background: blue;
 }
 
 circular-reveal {
@@ -65,10 +74,19 @@ circular-reveal div {
 circular-reveal h1 {
   color: #fff;
   font-size: 3em;
+  animation: slide-in 0.75s ease-in-out;
 }
 
 circular-reveal h3 {
   font-size: 1.5em;
   margin-top: 0.5em;
   color: rgb(218, 218, 218);
+  animation: slide-in 0.75s ease-in-out 0.05s;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
 }

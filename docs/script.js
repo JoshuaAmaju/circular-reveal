@@ -1,4 +1,5 @@
 const nextReveal = document.querySelector(".next-reveal");
+const reverseReveal = document.querySelector(".reverse-reveal");
 const previousReveal = document.querySelector(".previous-reveal");
 
 const revealObj = [
@@ -86,6 +87,39 @@ class RevealController {
     return revealer;
   }
 
+  reverse() {
+    const current = this.current;
+    const reveal = current.circularReveal;
+
+    let index;
+
+    revealObj.map((item, i) => {
+      if (item.isActive) {
+        if (i !== 0) {
+          index = i - 1;
+        } else {
+          index = revealObj.length - 1;
+        }
+      }
+
+      item.isActive = false;
+    });
+
+    const newRevealer = this.newReveal(index);
+    const newReveal = newRevealer.circularReveal;
+    newReveal.style.zIndex = -1;
+    newRevealer.reveal();
+
+    reveal.addEventListener("afterhide", () => {
+      if (current) current.remove();
+      newReveal.style.removeProperty("z-index");
+      this.current = newRevealer;
+    });
+
+    current.setTarget(".reverse-reveal");
+    current.close();
+  }
+
   next() {
     let index;
 
@@ -109,8 +143,10 @@ class RevealController {
     setTimeout(() => revealer.reveal(), 100);
 
     reveal.addEventListener("afterreveal", () => {
-      if (current) current.remove();
-      this.current = revealer;
+      setTimeout(() => {
+        if (current) current.remove();
+        this.current = revealer;
+      }, 100);
     });
   }
 
@@ -137,12 +173,15 @@ class RevealController {
     setTimeout(() => revealer.reveal(), 100);
 
     reveal.addEventListener("afterreveal", () => {
-      if (current) current.remove();
-      this.current = revealer;
+      setTimeout(() => {
+        if (current) current.remove();
+        this.current = revealer;
+      }, 100);
     });
   }
 }
 
 const controller = new RevealController();
 nextReveal.onclick = () => controller.next();
+reverseReveal.onclick = () => controller.reverse();
 previousReveal.onclick = () => controller.previous();
