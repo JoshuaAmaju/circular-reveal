@@ -49,7 +49,7 @@ button {
 
 .reverse-reveal {
   color: #fff;
-  background: blue;
+  background: rgb(255, 0, 85);
 }
 
 circular-reveal {
